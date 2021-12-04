@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Nexa";
+    font-weight: 300;
+    src: url("@/assets/fonts/nexa/Nexa-Light.eot"); /* IE9*/
+    src: url("@/assets/fonts/nexa/Nexa-Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("@/assets/fonts/nexa/Nexa-Light.woff") format("woff"),
+    url("@/assets/fonts/nexa/Nexa-Light.otf") format("opentype"),
+    url("@/assets/fonts/nexa/Nexa-Light.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Nexa";
+    font-weight: normal;
+    src: url("@/assets/fonts/nexa/Nexa-Regular.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Nexa";
+    font-weight: bold;
+    src: url("@/assets/fonts/nexa/Nexa-Bold.eot"); /* IE9*/
+    src: url("@/assets/fonts/nexa/Nexa-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("@/assets/fonts/nexa/Nexa-Bold.woff") format("woff"),
+    url("@/assets/fonts/nexa/Nexa-Bold.otf") format("opentype"),
+    url("@/assets/fonts/nexa/Nexa-Bold.ttf") format("truetype");
+  }
+
+  *:not(.brand-text) {
+    font-family: 'Exo 2', 'Nexa', 'system-ui', '-apple-system', '.AppleSystemUIFont', 'BlinkMacSystemFont', sans-serif;
+  }
+
+  .brand-text {
+    font-family: 'Nexa', 'Exo 2', 'system-ui', '-apple-system', '.AppleSystemUIFont', 'BlinkMacSystemFont', sans-serif;
+    text-transform: lowercase;
+    letter-spacing: 0.007em;
+  }
+}
+
+.text-description {
+  font-size: 10px;
+}
+.text-name {
+  font-size: 12px;
+}
+.file-upload {
+  @apply
+  relative
+  cursor-pointer
+  bg-white
+  rounded-md
+  font-medium
+  text-indigo-600
+  hover:text-indigo-500
+  focus-within:outline-none
+  focus-within:ring-2
+  focus-within:ring-offset-2
+  focus-within:ring-indigo-500
+}
+.file-upload-container {
+  @apply
+  mt-1
+  flex
+  justify-center
+  px-6
+  pt-5
+  pb-6
+  border-2 border-gray-300 border-dashed
+  rounded-md
+}
+.label-class {
+  @apply mx-4 text-sm font-bold mb-2
+}
+.input-class {
+  @apply border-0 px-3 py-3 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 my-2;
+}
+.error-class {
+  @apply text-xs text-red-600 font-bold tracking-wide
+}
+.nav-link {
+  @apply px-2 py-6 z-10
+}
+.create-button {
+  @apply px-4 py-2 bg-indigo-400 rounded-lg font-bold text-blue-50 mx-4 md:mt-24 mb-8
+}
+.danger-button {
+  @apply px-4 py-2 bg-red-600 rounded-lg font-bold text-blue-50
+}
+.tab-area {
+  @apply text-center
+}
+
+.title {
+  @apply mx-4 text-sm font-bold mb-2
+}
+html {
+  overflow-x: hidden;
+}
+#app {
+  overflow-x:hidden;
+  background-color: rgba(119, 136, 153, 0.15);
+  @apply min-h-screen
+}
+.dark #app {
+  background-color: rgb(0, 0, 0);
+}
+.auth-form-input {
+  @apply border-0 px-3 py-3 mb-0 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150;
+}
+.btn-morgan {
+  @apply font-extrabold uppercase px-6 py-3 mr-1 mb-1 w-full rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150;
+  background: rgb(0,115,251);
+  background: linear-gradient(80deg, rgba(0,115,251,1) 0%, rgba(1,218,236,1) 100%);
+  color: #2c3e4f;
+}
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+
+
+.checkbox, .radio, .switch {
+  @apply inline-flex items-center cursor-pointer relative;
+}
+
+.checkbox input[type=checkbox], .radio input[type=radio], .switch input[type=checkbox] {
+  @apply absolute left-0 opacity-0 -z-1;
+}
+
+.checkbox input[type=checkbox]+.check, .radio input[type=radio]+.check, .switch input[type=checkbox]+.check {
+  @apply border-gray-700 border transition-colors duration-200 dark:bg-gray-800;
+}
+
+.checkbox input[type=checkbox]:focus+.check, .radio input[type=radio]:focus+.check, .switch input[type=checkbox]:focus+.check {
+  @apply ring ring-blue-700;
+}
+
+.checkbox input[type=checkbox]+.check, .radio input[type=radio]+.check {
+  @apply block w-5 h-5;
+}
+
+.checkbox input[type=checkbox]+.check {
+  @apply rounded;
+}
+
+.switch input[type=checkbox]+.check {
+  @apply flex items-center flex-shrink-0 w-12 h-6 p-0.5 bg-gray-200;
+}
+
+.radio input[type=radio]+.check, .switch input[type=checkbox]+.check, .switch input[type=checkbox]+.check:before {
+  @apply rounded-full;
+}
+
+.checkbox input[type=checkbox]:checked+.check, .radio input[type=radio]:checked+.check {
+  @apply bg-no-repeat bg-center bg-blue-500 border-blue-500 border-4;
+}
+
+.checkbox input[type=checkbox]:checked+.check {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Cpath style='fill:%23fff' d='M 0.04038059,0.6267767 0.14644661,0.52071068 0.42928932,0.80355339 0.3232233,0.90961941 z M 0.21715729,0.80355339 0.85355339,0.16715729 0.95961941,0.2732233 0.3232233,0.90961941 z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.radio input[type=radio]:checked+.check {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z' /%3E%3C/svg%3E");
+}
+
+.switch input[type=checkbox]:checked+.check {
+  @apply bg-blue-500 border-blue-500;
+}
+
+.switch input[type=checkbox]+.check:before {
+  content: '';
+  @apply block w-5 h-5 bg-white border border-gray-700;
+}
+
+.switch input[type=checkbox]:checked+.check:before {
+  transform: translate3d(110%, 0 ,0);
+  @apply border-blue-500;
+}
+
+.checkbox .control-label, .radio .control-label, .switch .control-label {
+  @apply pl-2;
+}
+
+progress {
+  @apply h-3 rounded-full overflow-hidden;
+}
+
+progress::-webkit-progress-bar {
+  @apply bg-gray-200;
+}
+
+progress::-webkit-progress-value {
+  @apply bg-green-500;
+}
+
+progress::-moz-progress-bar {
+  @apply bg-green-500;
+}
+
+progress::-ms-fill {
+  @apply bg-green-500 border-0;
+}
+table {
+  @apply w-full;
+}
+
+thead {
+  @apply hidden lg:table-header-group;
+}
+
+tr {
+  @apply max-w-full block relative border-b-4 border-gray-100
+  lg:table-row lg:border-b-0 dark:border-gray-700;
+}
+
+tr:last-child {
+  @apply border-b-0;
+}
+
+th {
+  @apply lg:text-left lg:py-2 lg:px-3;
+}
+
+td {
+  @apply flex justify-between py-3 px-4 align-top border-b border-gray-100
+  lg:table-cell lg:text-left lg:py-2 lg:px-3 lg:align-middle lg:border-b-0 dark:border-gray-700;
+}
+
+tr:nth-child(odd) td {
+  @apply lg:bg-gray-50 lg:dark:bg-gray-800;
+}
+
+td:last-child {
+  @apply border-b-0;
+}
+
+tbody tr:hover td {
+  @apply lg:bg-gray-100 lg:dark:bg-gray-800;
+}
+
+td:before {
+  content: attr(data-label);
+  @apply font-semibold pr-3 text-left lg:hidden;
+}
+
+td.checkbox-cell, th.checkbox-cell {
+  @apply lg:w-5;
+}
+
+td.progress-cell progress {
+  @apply flex w-2/5 self-center
+  lg:w-full;
+}
+
+td.image-cell {
+  @apply border-b-0 lg:w-6;
+}
+
+td.image-cell:before, td.actions-cell:before {
+  @apply hidden;
+}
+
+td.image-cell .image {
+  @apply w-24 h-24 mx-auto lg:w-6 lg:h-6;
+}
+
+.table-pagination {
+  @apply px-6 py-3 border-t border-gray-100 dark:border-gray-700;
+}
